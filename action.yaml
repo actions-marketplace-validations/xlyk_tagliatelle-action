@@ -1,3 +1,4 @@
+---
 # action.yml
 name: 'xlyk-tagliatelle'
 author: 'Kyle Hanks (github.com/xlyk)'
@@ -21,14 +22,24 @@ inputs:
   pattern:
     description: 'regex pattern to use'
     required: true
+  project:
+    description: 'name of the project'
+    required: true
+  environment:
+    description: 'name of the environment'
+    required: true
 runs:
   using: 'docker'
-  image: 'docker://xlyk/tagliatelle:v4'
+  image: 'docker://xlyk/tagliatelle:v5'
   args:
     - -repo
     - ${{ inputs.repo }}
     - -file
     - ${{ inputs.file }}
+    - -project
+    - ${{ inputs.project }}
+    - -environment
+    - ${{ inputs.environment }}
     - -tag
     - ${{ inputs.tag }}
     - -pattern
