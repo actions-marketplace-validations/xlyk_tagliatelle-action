@@ -32,5 +32,6 @@ with:
   environment: prod
   tag: '3.1.4'
   pattern: >
-    (?mi)(newTag: ["']?)(\d+\.\d+\.\d+)(["']?)$```
+    (?mi)(newTag: ["']?)(\d+\.\d+\.\d+)(["']?)$
+```
 
